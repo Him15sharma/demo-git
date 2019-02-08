@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>LOGIN PAGE</title>
+
+<style>
+body{
+    background-image:url("background.jpg");
+    margin-top: 70px;
+    font:12px/15px Roboto, "Helvetica Neue", Helvetica, sans-serif;
+    color: white;   
+	text-align:center;
+}
+#e{
+	width: 20%;
+	padding: 15px 10px 15px 50px;
+	font-size: 14px;
+	background: transparent;
+	border: 2px solid #FFF;
+	border-radius: 8px;
+	color: #FFF;
+	background-image:url("mail.png");
+	background-position:2px 3px;
+	background-repeat: no-repeat;
+	}
+#p{
+	width: 20%;
+	padding: 15px 10px 15px 50px;
+	font-size: 14px;
+	background: transparent;
+	border: 2px solid #FFF;
+	border-radius: 8px;
+	color: #FFF;
+	background-image:url("lock.png");
+	background-position:2px 3px;
+	background-repeat: no-repeat;
+	}
+</style>
+</head>
+<body>
+  <h1>SLEEK LOGIN FORM</h1><br><br><br><br>
+  <h2>LOGIN INTO YOUR ACCOUNT</h2>   
+ <div class="in">
+     <input type="text" Name="Userame" placeholder="EMAIL" id="e"><br><br><br>
+	<input type="password" Name="Password" placeholder="PASSWORD" id="p"><br><br> 
+	<input type="checkbox" name="remember me" value="remember me" id="r">Remember Me<br><br>
+	<button name="LOGIN" onclick="saveUserDetails()">LOGIN</button>&nbsp; &nbsp;<a href="#">REGISTER NEW ACCOUNT</a>
+    </div> 
+	<script>
+            function saveUserDetails(){
+                var id= document.getElementById("e").value;
+                var pass=document.getElementById("p").value;
+                if(typeof(Storage)!=="undefined")
+				{
+                    localStorage.setItem("user_eamil",id);
+                    localStorage.setItem("user_password",pass);
+                    sessionStorage.setItem("e",id);
+                    sessionStorage.setItem("p",pass);
+                }
+                else{
+                    document.getElementById("result").innerHTML="Sorry, your browser does not support Web Storage...";
+
+                }
+
+            }
+            
+        </script>
+    </body>
+</html>
+</body>
+</html>
